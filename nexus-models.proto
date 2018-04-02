@@ -1,0 +1,23 @@
+syntax = "proto3";
+package nexus;
+
+message ProtoPin {
+  uint32 board = 1;
+  uint32 id = 2;
+  string name = 3;
+}
+
+message ProtoGroup {
+  string name = 1;
+  repeated ProtoPin pins = 2;
+}
+
+message GetGroupsResponse {
+  repeated ProtoGroup groups = 1;
+}
+
+message PutPinValueRequest {
+  uint32 board = 1;
+  uint32 id = 2;
+  int32 value = 3;
+}
